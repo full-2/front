@@ -178,13 +178,13 @@ const router = createBrowserRouter([
       {
         path: "post",
         element: <AdminPost />,
-        chlildren: [
+        children: [
           {
             path: "",
             element: <PostList />
           },
           {
-            path: "/write",
+            path: "write",
             element: <WritePost />
           },
         ]

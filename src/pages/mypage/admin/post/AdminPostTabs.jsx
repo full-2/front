@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdimPostTabs = () => {
+const AdminPostTabs = () => {
   return (
     <div>
       글 리스트, 글 작성 탭
@@ -8,4 +8,4 @@ const AdimPostTabs = () => {
   );
 };
 
-export default AdimPostTabs;
+export default AdminPostTabs;
