@@ -41,6 +41,7 @@ const shapeMap = {
   square: "0",
   rounded: "8px",
   pill: "999px",
+  square: "4px",
 };
 
 const borderWidthMap = {

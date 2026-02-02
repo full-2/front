@@ -22,6 +22,12 @@ export const iconMap = {
   "minus-white": "minus-white.png",
   kakao: "kakao.png",
   naver: "naver.png",
+  "location-white": "location-white.png",
+  "location-black": "location-black.png",
+  "camera-white": "camera-white.png",
+  "camera-black": "camera-black.png",
+  "lamp-white": "lamp-white.png",
+  "lamp-black": "lamp-black.png",
 };
 
 const sizeMap = {
