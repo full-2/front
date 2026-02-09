@@ -49,7 +49,7 @@ S.RegionNoticeBox = styled.div`
   width: fit-content;
   max-width: 100%;
   padding: 12px 16px;
-  background: #f1ebf5;
+  background: #f3f4f6;
   border-radius: 10px;
 `;
 
@@ -85,12 +85,11 @@ S.SubText = styled.p`
 // FilterPanel
 
 S.FilterPanelSection = styled.section`
-  width: 1320px;
+  width: 100%;
   border: 1px solid #d9d9d9;
   background: #ffffff;
   border-radius: 14px;
   padding: 14px 24px;
-  margin: 0 auto;
 `;
 
 S.FilterRow = styled.div`

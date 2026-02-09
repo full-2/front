@@ -2,7 +2,7 @@ import React from "react";
 import S from "./style";
 
 const Card = ({ post }) => {
-  if (!post) return null;
+  if (!post) return null
   const {
     id,
     category = "",
@@ -11,7 +11,7 @@ const Card = ({ post }) => {
     likeCount = 0,
     bookmarkCount = 0,
     imageSrc = "",
-  } = post;
+  } = post
 
   return (
     <S.CardLink to={`/provide/detail/${id}`} aria-label={`${title} 상세 보기`}>
@@ -22,7 +22,7 @@ const Card = ({ post }) => {
             alt={`${category} 썸네일`}
             loading="lazy"
             onError={(e) => {
-              e.currentTarget.src = "/assets/images/provide-default.png";
+              e.currentTarget.src = "/assets/images/provide-default.png"
             }}
           />
           <S.Category
@@ -62,13 +62,13 @@ const Card = ({ post }) => {
 };
 
 function formatDate(value) {
-  const d = value instanceof Date ? value : new Date(value);
-  if (Number.isNaN(d.getTime())) return String(value);
+  const d = value instanceof Date ? value : new Date(value)
+  if (Number.isNaN(d.getTime())) return String(value)
 
-  const yy = d.getFullYear();
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  return `${yy}. ${mm}. ${dd}`;
+  const yy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, "0")
+  const dd = String(d.getDate()).padStart(2, "0")
+  return `${yy}. ${mm}. ${dd}`
 }
 
 export default Card;

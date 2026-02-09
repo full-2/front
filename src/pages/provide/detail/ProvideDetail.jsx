@@ -13,30 +13,30 @@ const useMockData = true; // 서버 연결하면 false로 변경
 
 // mock 버전 상세 조회
 const getMockPostDetail = async (id) => {
-  const numericId = Number(id);
-  const found = mockPosts.find((post) => post.id === numericId);
-  if (!found) throw new Error("Post not found");
-  return found;
-};
+  const numericId = Number(id)
+  const found = mockPosts.find((post) => post.id === numericId)
+  if (!found) throw new Error("Post not found")
+  return found
+}
 
 // server 버전 상세 조회
 const getServerPostDetail = async (id) => {
-  const apiData = await fetchProvidePostDetail({ id: Number(id) });
-  return mapApiPostToPost(apiData);
-};
+  const apiData = await fetchProvidePostDetail({ id: Number(id) })
+  return mapApiPostToPost(apiData)
+}
 
 const ProvideDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams()
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["provideDetail", id, useMockData],
     queryFn: () => (useMockData ? getMockPostDetail(id) : getServerPostDetail(id)),
     enabled: !!id,
-  });
+  })
 
-  if (isLoading) return <div>로딩 중입니다.</div>;
-  if (isError) return <div>게시글을 불러오지 못했어요😢</div>;
-  if (!data) return null;
+  if (isLoading) return <div>로딩 중입니다.</div>
+  if (isError) return <div>게시글을 불러오지 못했어요😢</div>
+  if (!data) return null
 
   return (
     <S.ProvideDetailContainer>

@@ -7,7 +7,7 @@ import ProvideBox from "../../../components/provideBox/ProvideBox";
 import Icon from "../../../components/icon/Icon";
 
 const RegionNoticeBanner = ({ region }) => {
-  const isRegionSet = Boolean(region);
+  const isRegionSet = Boolean(region)
 
   return (
     <S.BannerContainer>
