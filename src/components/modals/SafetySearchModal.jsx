@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import S from "./style";
 
 const KAKAO_APP_KEY = process.env.REACT_APP_KAKAO_MAP_KEY;
@@ -74,6 +75,7 @@ const loadKakaoMaps = () => {
 };
 
 const SafetySearchModal = ({ isOpen, onClose, onConfirm }) => {
+  const navigate = useNavigate();
   const [address, setAddress] = useState("");
   const [isSearched, setIsSearched] = useState(false);
   const [isAddressSelected, setIsAddressSelected] = useState(false);
@@ -269,6 +271,8 @@ const SafetySearchModal = ({ isOpen, onClose, onConfirm }) => {
       lat: center?.getLat(),
       lng: center?.getLng(),
     });
+    onClose?.();
+    navigate("/");
   };
 
   if (!isOpen) return null;
@@ -345,7 +349,7 @@ const SafetySearchModal = ({ isOpen, onClose, onConfirm }) => {
           disabled={!isSearched}
           onClick={handleConfirm}
         >
-          안전점수 확인하기
+          설정하기
         </S.PrimaryButton>
       </S.ModalContainer>
     </S.ModalOverlay>
